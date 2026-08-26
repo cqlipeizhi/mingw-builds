@@ -38,8 +38,8 @@
 readonly HOST_MINGW_VERSION=12.5.0
 readonly HOST_MINGW_RT_VERSION=13
 readonly HOST_MINGW_BUILD_REV=0
-readonly i686_HOST_MINGW_PATH_URL="https://github.com/cqlipeizhi/mingw-builds-binaries/releases/download/$HOST_MINGW_VERSION-rt_v$HOST_MINGW_RT_VERSION-rev$HOST_MINGW_BUILD_REV/i686-$HOST_MINGW_VERSION-release-posix-dwarf-rt_v$HOST_MINGW_RT_VERSION-rev$HOST_MINGW_BUILD_REV.7z"
-readonly x86_64_HOST_MINGW_PATH_URL="https://github.com/cqlipeizhi/mingw-builds-binaries/releases/download/$HOST_MINGW_VERSION-rt_v$HOST_MINGW_RT_VERSION-rev$HOST_MINGW_BUILD_REV/x86_64-$HOST_MINGW_VERSION-release-posix-seh-rt_v$HOST_MINGW_RT_VERSION-rev$HOST_MINGW_BUILD_REV.7z"
+readonly i686_HOST_MINGW_PATH_URL="https://github.com/cqlipeizhi/mingw-builds-binaries/releases/download/$HOST_MINGW_VERSION-rt_v$HOST_MINGW_RT_VERSION-rev$HOST_MINGW_BUILD_REV/i686-$HOST_MINGW_VERSION-release-posix-dwarf-{msvcrt}-rt_v$HOST_MINGW_RT_VERSION-rev$HOST_MINGW_BUILD_REV.7z"
+readonly x86_64_HOST_MINGW_PATH_URL="https://github.com/cqlipeizhi/mingw-builds-binaries/releases/download/$HOST_MINGW_VERSION-rt_v$HOST_MINGW_RT_VERSION-rev$HOST_MINGW_BUILD_REV/x86_64-$HOST_MINGW_VERSION-release-posix-seh-{msvcrt}-rt_v$HOST_MINGW_RT_VERSION-rev$HOST_MINGW_BUILD_REV.7z"
 
 # **************************************************************************
 
