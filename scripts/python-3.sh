@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=3.14.6
+PKG_VERSION=3.12.12
 PKG_NAME=Python-${PKG_VERSION}
 PKG_DIR_NAME=Python-${PKG_VERSION}
 PKG_TYPE=git
