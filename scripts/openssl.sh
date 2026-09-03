@@ -40,7 +40,7 @@ PKG_NAME=openssl-${PKG_VERSION}
 PKG_DIR_NAME=openssl-${PKG_VERSION}
 PKG_TYPE=.tar.gz
 PKG_URLS=(
-	"https://github.com/openssl/openssl/releases/download/openssl-${PKG_VERSION}/openssl-${PKG_VERSION}${PKG_TYPE}"
+	"https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-${PKG_VERSION}${PKG_TYPE}"
 )
 
 PKG_PRIORITY=extra
