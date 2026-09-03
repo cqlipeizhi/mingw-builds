@@ -138,7 +138,7 @@ SHORT_OUTPUT=no
 DISABLE_GCC_LTO=no
 PROVIDED_TOOLCHAIN=
 
-DEFAULT_PYTHON_VERSION=3
+DEFAULT_PYTHON_VERSION=2
 
 # **************************************************************************
 
