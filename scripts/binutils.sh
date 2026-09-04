@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=2.47
+PKG_VERSION=2.27
 PKG_NAME=binutils-${PKG_VERSION}
 [[ $USE_MULTILIB == yes ]] && {
 	PKG_NAME=$BUILD_ARCHITECTURE-$PKG_NAME-multi
@@ -43,7 +43,7 @@ PKG_NAME=binutils-${PKG_VERSION}
 	PKG_NAME=$BUILD_ARCHITECTURE-$PKG_NAME-nomulti
 }
 PKG_DIR_NAME=binutils-${PKG_VERSION}
-PKG_TYPE=.tar.xz
+PKG_TYPE=$( [[ $(echo $PKG_VERSION | cut -d. -f2) -gt 27 ]] && echo ".tar.xz" || echo ".tar.bz2" )
 PKG_URLS=(
 	"https://ftpmirror.gnu.org/gnu/binutils/binutils-${PKG_VERSION}${PKG_TYPE}"
 )
@@ -53,10 +53,21 @@ PKG_PRIORITY=prereq
 #
 
 PKG_PATCHES=(
-	binutils/0002-check-for-unusual-file-harder.patch
+	$( [[ $PKG_VERSION == 2.27 ]] && { 
+			echo "binutils/0001-enable-gold-on.mingw32.patch"
+			echo "binutils/binutils-2.27-0002-check-for-unusual-file-harder.patch"
+		} || {
+			echo "binutils/0002-check-for-unusual-file-harder.patch"
+		}
+	)
 	binutils/0008-fix-libiberty-makefile.mingw.patch
 	binutils/0009-fix-libiberty-configure.mingw.patch
-	binutils/0022-libiberty-missing-typedef.patch
+	$( [[ $PKG_VERSION == 2.27 ]] && {
+		echo "binutils/0110-binutils-mingw-gnu-print.patch"
+		echo "binutils/0018-binutils-PC64-PCRQUAD-relocation-fix.mingw32.patch"
+	} || {
+		echo "binutils/0022-libiberty-missing-typedef.patch"
+	} )
 )
 
 #
