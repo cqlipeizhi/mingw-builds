@@ -76,7 +76,7 @@ PKG_CONFIGURE_FLAGS=(
 	--disable-rpath
 	#
 	--with-system-gdbinit=$PREFIX/etc/gdbinit
-	$( [[ $DEFAULT_PYTHON_VERSION == 3 ]] ) &&  { echo "--with-python=$PREFIX/opt/bin/python3.exe"; } || { echo "--with-python=${PREFIX}/opt/bin/python-config-u.sh"; }
+	--with-python=$( [[ $DEFAULT_PYTHON_VERSION == 3 ]] && { echo "${PREFIX}/opt/bin/python3.exe"; } || { echo "${PREFIX}/opt/bin/python-config-u.sh"; } )
 	--with-expat
 	--with-libiconv
 	--with-zlib
