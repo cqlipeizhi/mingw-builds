@@ -86,7 +86,7 @@ PKG_MAKE_FLAGS=(
 	-j$JOBS
 	ZLIB_INCLUDE="\"-I$PREREQW_DIR/$BUILD_ARCHITECTURE-zlib-$LINK_TYPE_SUFFIX/include\""
 	depend
-	build_sw
+	$( [[ $PKG_VERSION == 1.1.1w ]] && echo "all" || echo "build_sw" )
 )
 
 #
@@ -98,9 +98,10 @@ PKG_TESTSUITE_FLAGS=(
 #
 
 PKG_INSTALL_FLAGS=(
-	# -j$JOBS
-	install_sw
-	install_ssldirs
+	$( [[ $PKG_VERSION == 1.1.1w ]] \
+		&& { echo "-j${JOBS}"; echo "install"; } \
+		|| { echo "install_sw"; echo "install_ssldirs"; } \
+	)
 )
 
 # **************************************************************************
