@@ -186,9 +186,9 @@ PKG_CONFIGURE_FLAGS=(
 	--with-threads
 	--with-system-expat
 	--with-system-ffi
-	--enable-optimizations
+	# --enable-optimizations
 	#
-	LIBFFI_INCLUDEDIR="$LIBSW_DIR/lib/libffi-$LIBFFI_VERSION/include"
+	LIBFFI_INCLUDEDIR="$LIBSW_DIR/include"
 	OPT=""
 	CFLAGS="$COMMON_CFLAGS -fwrapv -DNDEBUG -D__USE_MINGW_ANSI_STDIO=1"
 	CPPFLAGS="$COMMON_CPPFLAGS $MY_CPPFLAGS"
