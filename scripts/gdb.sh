@@ -76,7 +76,7 @@ PKG_CONFIGURE_FLAGS=(
 	--disable-rpath
 	#
 	--with-system-gdbinit=$PREFIX/etc/gdbinit
-	--with-python=$PREFIX/opt/bin/python3.exe
+	$( [[ $DEFAULT_PYTHON_VERSION == 3 ]] ) &&  { echo "--with-python=$PREFIX/opt/bin/python3.exe"; } || { echo "--with-python=${PREFIX}/opt/bin/python-config-u.sh"; }
 	--with-expat
 	--with-libiconv
 	--with-zlib
@@ -101,7 +101,7 @@ PKG_MAKE_FLAGS=(
 
 PKG_INSTALL_FLAGS=(
 	-j$JOBS
-	$( [[ $STRIP_ON_INSTALL == yes ]] && echo install-strip || echo install )
+	$( [[ $STRIP_ON_INSTALL == yes && $(echo $PKG_VERSION | cut -d. -f1) -gt 7 ]] && echo install-strip || echo install )
 )
 
 # **************************************************************************
