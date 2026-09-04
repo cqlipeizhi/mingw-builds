@@ -39,9 +39,15 @@ PKG_VERSION=1.1.1w
 PKG_NAME=openssl-${PKG_VERSION}
 PKG_DIR_NAME=openssl-${PKG_VERSION}
 PKG_TYPE=.tar.gz
-PKG_URLS=(
-	"https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-${PKG_VERSION}${PKG_TYPE}"
-)
+if [[ $PKG_VERSION == 1.1.1w ]]; then
+	PKG_URLS=(
+		"https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1w/openssl-${PKG_VERSION}${PKG_TYPE}"
+	)
+else
+	PKG_URLS=(
+		"https://github.com/openssl/openssl/releases/download/openssl-${PKG_VERSION}/openssl-${PKG_VERSION}${PKG_TYPE}"
+	)
+fi
 
 PKG_PRIORITY=extra
 PKG_LNDIR=yes
