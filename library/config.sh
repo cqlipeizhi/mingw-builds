@@ -63,6 +63,7 @@ COLOR_STATUS=$COLOR_BLUE
 
 # **************************************************************************
 
+GNU_DOWNLOAD_URL=https://ftpmirror.gnu.org/gnu
 readonly PATCHES_DIR=$TOP_DIR/patches
 readonly SOURCES_DIR=$TOP_DIR/sources
 readonly TESTS_DIR=$TOP_DIR/tests

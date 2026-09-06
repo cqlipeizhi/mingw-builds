@@ -45,7 +45,7 @@ PKG_NAME=binutils-${PKG_VERSION}
 PKG_DIR_NAME=binutils-${PKG_VERSION}
 PKG_TYPE=$( [[ $(echo $PKG_VERSION | cut -d. -f2) -gt 27 ]] && echo ".tar.xz" || echo ".tar.bz2" )
 PKG_URLS=(
-	"https://ftpmirror.gnu.org/gnu/binutils/binutils-${PKG_VERSION}${PKG_TYPE}"
+	"${GNU_DOWNLOAD_URL}/binutils/binutils-${PKG_VERSION}${PKG_TYPE}"
 )
 
 PKG_PRIORITY=prereq

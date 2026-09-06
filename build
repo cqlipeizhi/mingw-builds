@@ -467,6 +467,9 @@ while [[ $# > 0 ]]; do
 		--provided-toolchain=*)
 			PROVIDED_TOOLCHAIN=${1/--provided-toolchain=/}
 		;;
+		--gnu-download-url=*)
+			GNU_DOWNLOAD_URL=${1#--gnu-download-url=}
+		;;
 		*)
 			die "bad command line: \"$1\". terminate."
 		;;
