@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=$( [[ `echo $BUILD_VERSION | cut -d. -f1` == 4 || `echo $BUILD_VERSION | cut -d. -f1` == 5 ]] && { echo 7.12.1; } || { echo 17.2; } )
+PKG_VERSION=$( [[ `echo $BUILD_VERSION | cut -d. -f1` == 4 || `echo $BUILD_VERSION | cut -d. -f1` == 5 ]] && { echo 7.12.1; } || { echo 8.3.1; } )
 PKG_NAME=gdb-${PKG_VERSION}
 PKG_DIR_NAME=gdb-${PKG_VERSION}
 PKG_TYPE=.tar.xz
@@ -52,7 +52,7 @@ PKG_PATCHES=(
 	#gdb/gdb-7.9-mingw-gcc-4.7.patch
 	# http://sourceware.org/bugzilla/show_bug.cgi?id=15412
 	gdb/gdb-perfomance.patch
-	$( [[ ${PKG_VERSION} == 7.12.1 ]] \
+	$( [[ ${PKG_VERSION} == 8.3.1 ]] \
 		&& { echo "gdb/gdb-7.12-fix-using-gnu-print.patch"; } \
 		|| { echo "gdb/gdb-16.2-fix-using-gnu-print.patch"; } 
 	)
