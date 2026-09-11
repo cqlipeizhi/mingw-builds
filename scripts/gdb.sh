@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=$( [[ `echo $BUILD_VERSION | cut -d. -f1` == 4 || `echo $BUILD_VERSION | cut -d. -f1` == 5 ]] && { echo 7.12.1; } || { echo 8.3.1; } )
+PKG_VERSION=$( [[ `echo $BUILD_VERSION | cut -d. -f1` == 4 || `echo $BUILD_VERSION | cut -d. -f1` == 5 ]] && { echo 7.12.1; } || { echo 9.2; } )
 PKG_NAME=gdb-${PKG_VERSION}
 PKG_DIR_NAME=gdb-${PKG_VERSION}
 PKG_TYPE=.tar.xz
@@ -52,9 +52,9 @@ PKG_PATCHES=(
 	#gdb/gdb-7.9-mingw-gcc-4.7.patch
 	# http://sourceware.org/bugzilla/show_bug.cgi?id=15412
 	gdb/gdb-perfomance.patch
-	$( [[ ${PKG_VERSION} == 8.3.1 ]] \
+	$( [[ ${PKG_VERSION} == 7.12.1 ]] \
 		&& { echo "gdb/gdb-7.12-fix-using-gnu-print.patch"; } \
-		|| { echo "gdb/gdb-16.2-fix-using-gnu-print.patch"; } 
+		|| { echo "gdb/gdb-fix-using-gnu-print.patch"; } 
 	)
 	$( [[ ${PKG_VERSION} == 7.12.1 ]] && { echo "gdb/gdb-7.12-dynamic-libs.patch"; } || { echo "gdb/gdb-8.3.1-dynamic-libs.patch"; } )
 	# $( [[ ${PKG_VERSION} == 10.2 ]] && { echo "gdb/gdb-10.2-fix-gnulib-dependencies.patch"; } )
@@ -101,7 +101,7 @@ PKG_MAKE_FLAGS=(
 
 PKG_INSTALL_FLAGS=(
 	-j$JOBS
-	$( [[ $STRIP_ON_INSTALL == yes && $(echo $PKG_VERSION | cut -d. -f1) -gt 7 ]] && echo install-strip || echo install )
+	$( [[ $STRIP_ON_INSTALL == yes && $(echo $PKG_VERSION | cut -d. -f1) -gt 11 ]] && echo install-strip || echo install )
 )
 
 # **************************************************************************
