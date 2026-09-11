@@ -94,7 +94,7 @@ LINK_TYPE_SHARED="--enable-shared --disable-static"
 LINK_TYPE_STATIC="--enable-static --disable-shared"
 LINK_TYPE_GCC_SHARED="--enable-host-shared"
 LINK_TYPE_GCC_STATIC="--disable-host-shared"
-LINK_TYPE_GCC=$LINK_TYPE_GCC_SHARED
+LINK_TYPE_GCC=$LINK_TYPE_BOTH
 GCC_DEPS_LINK_TYPE=$LINK_TYPE_STATIC
 
 ENABLE_LANGUAGES='c,c++,fortran'
