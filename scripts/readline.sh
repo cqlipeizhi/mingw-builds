@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=7.0
+PKG_VERSION=8.0
 PKG_NAME=readline-${PKG_VERSION}
 PKG_DIR_NAME=readline-${PKG_VERSION}
 PKG_TYPE=.tar.gz
@@ -63,6 +63,13 @@ if [[ ${PKG_VERSION} == 8.2 ]]; then
 		readline/0004-locale.patch
 		#
 		readline/remove-export-all-flag.patch
+	)
+elif [[ ${PKG_VERSION} == 8.0 ]]; then
+	PKG_PATCHES=(
+		readline/readline80-001
+		readline/readline80-002
+		readline/readline80-003
+		readline/readline80-004
 	)
 elif [[ ${PKG_VERSION} == 7.0 ]]; then
 	PKG_PATCHES=(
