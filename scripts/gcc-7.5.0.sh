@@ -64,6 +64,7 @@ PKG_PATCHES=(
 	gcc/gcc-libgomp-ftime64.patch
 	gcc/gcc-7-branch-diagnostic-color.c.patch
 	gcc/940-no-clobber-stamp-bits.patch
+	gcc/0020-libgomp-Don-t-hard-code-MS-printf-attributes.patch
 )
 
 #
