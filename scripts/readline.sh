@@ -64,6 +64,12 @@ if [[ ${PKG_VERSION} == 8.2 ]]; then
 		#
 		readline/remove-export-all-flag.patch
 	)
+elif [[ ${PKG_VERSION} == 8.1 ]]; then
+	PKG_PATCHES=(
+		readline/readline81-001
+		readline/readline81-002
+		readline/Fixed-missing-POSIX_SIGNALS-check.patch
+	)
 elif [[ ${PKG_VERSION} == 8.0 ]]; then
 	PKG_PATCHES=(
 		readline/readline80-001
