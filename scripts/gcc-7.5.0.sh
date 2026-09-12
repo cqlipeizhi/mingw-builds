@@ -63,6 +63,7 @@ PKG_PATCHES=(
 	gcc/gcc-7.3.0-filesystem.patch
 	gcc/gcc-libgomp-ftime64.patch
 	gcc/gcc-7-branch-diagnostic-color.c.patch
+	gcc/940-no-clobber-stamp-bits.patch
 )
 
 #
