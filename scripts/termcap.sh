@@ -40,7 +40,7 @@ PKG_NAME=termcap-${PKG_VERSION}
 PKG_DIR_NAME=termcap-${PKG_VERSION}
 PKG_TYPE=.tar.gz
 PKG_URLS=(
-	"${GNU_DOWNLOAD_URL}/termcap/termcap-${PKG_VERSION}${PKG_TYPE}"
+	"${GNU_URL_PREFIX}/termcap/termcap-${PKG_VERSION}${PKG_TYPE}"
 )
 
 PKG_PRIORITY=extra

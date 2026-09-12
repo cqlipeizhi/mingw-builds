@@ -40,7 +40,7 @@ PKG_NAME=ncurses-${PKG_VERSION}
 PKG_DIR_NAME=ncurses-${PKG_VERSION}
 PKG_TYPE=.tar.gz
 PKG_URLS=(
-	"${GNU_DOWNLOAD_URL}/ncurses/ncurses-${PKG_VERSION}${PKG_TYPE}"
+	"${GNU_URL_PREFIX}/ncurses/ncurses-${PKG_VERSION}${PKG_TYPE}"
 )
 
 PKG_PRIORITY=extra

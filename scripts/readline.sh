@@ -40,7 +40,7 @@ PKG_NAME=readline-${PKG_VERSION}
 PKG_DIR_NAME=readline-${PKG_VERSION}
 PKG_TYPE=.tar.gz
 PKG_URLS=(
-	"${GNU_DOWNLOAD_URL}/readline/readline-${PKG_VERSION}${PKG_TYPE}"
+	"${GNU_URL_PREFIX}/readline/readline-${PKG_VERSION}${PKG_TYPE}"
 )
 
 PKG_PRIORITY=extra

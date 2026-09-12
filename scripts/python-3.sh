@@ -48,13 +48,12 @@ PKG_PRIORITY=extra
 #
 
 PKG_EXECUTE_AFTER_UNCOMPRESS=(
-	"git reset --hard 5d7d5021e59614313678db107f47e9249329cf91" # Reset to this commit hash for reproducible builds
+	"git reset --hard 56cdb4b201d96f26cdcb1f7c2b93086298f7df11" # Reset to this commit hash for reproducible builds
 )
 
 #
 
 PKG_PATCHES=(
-	Python3/python-3.11-_cursesmodule-fix-array-type.patch
 	Python3/python-3.13-fix-incompatible-pointer-types.patch
 	Python3/python-3.12-fix-tk.patch
 )
@@ -102,7 +101,7 @@ PKG_CONFIGURE_FLAGS=(
 	# --with-tzpath=$LIBS_DIR/share/zoneinfo
 	--enable-optimizations
 	#
-	CFLAGS="$COMMON_CFLAGS $MY_CPPFLAGS -D__USE_MINGW_ANSI_STDIO=1 -DNCURSES_STATIC -fprofile-update=atomic -fprofile-correction"
+	CFLAGS="$COMMON_CFLAGS $MY_CPPFLAGS -D__USE_MINGW_ANSI_STDIO=1 -DNCURSES_STATIC"
 	CPPFLAGS="$COMMON_CPPFLAGS $MY_CPPFLAGS -D__USE_MINGW_ANSI_STDIO=1 -DNCURSES_STATIC"
 	LDFLAGS="$COMMON_LDFLAGS -L$PREREQW_DIR/$BUILD_ARCHITECTURE-zlib-$LINK_TYPE_SUFFIX/lib -L$LIBSW_DIR/lib"
 	OPENSSL_LIBS="\"-lcrypto -lssl\""
