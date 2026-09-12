@@ -48,7 +48,7 @@ PROJECT_FS_ROOT_DIR=/home/frs/project/mingw-w64
 
 # URL prefix of a GNU mirror server without a trailing slash
 # See https://www.gnu.org/prep/ftp.html
-GNU_URL_PREFIX=https://ftpmirror.gnu.org/gnu
+GNU_URL_PREFIX=https://ftp.gnu.org/gnu
 
 # **************************************************************************
 
