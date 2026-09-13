@@ -79,7 +79,7 @@ PKG_PATCHES=(
 #
 
 PKG_EXECUTE_AFTER_PATCH=(
-	$( [[ $RUNTIME_MAJOR_VERSION == 8 ]] && echo "aclocal" )
+	$( [[ $RUNTIME_MAJOR_VERSION == 8 || $RUNTIME_MAJOR_VERSION == 9 ]] && echo "aclocal" )
 	"automake"
 )
 
