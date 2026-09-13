@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=8.0
+PKG_VERSION=8.1
 PKG_NAME=readline-${PKG_VERSION}
 PKG_DIR_NAME=readline-${PKG_VERSION}
 PKG_TYPE=.tar.gz
@@ -47,46 +47,54 @@ PKG_PRIORITY=extra
 
 #
 
-if [[ ${PKG_VERSION} == 8.2 ]]; then
-	PKG_PATCHES=(
-		readline/readline82-001.patch
-		readline/readline82-002.patch
-		readline/readline82-003.patch
-		readline/readline82-004.patch
-		readline/readline82-005.patch
-		readline/readline82-006.patch
-		readline/readline82-007.patch
-		# patches imported from msys2
-		readline/0001-sigwinch.patch
-		readline/0002-event-hook.patch
-		readline/0003-fd_set.patch
-		readline/0004-locale.patch
-		#
-		readline/remove-export-all-flag.patch
-	)
-elif [[ ${PKG_VERSION} == 8.1 ]]; then
-	PKG_PATCHES=(
-		readline/readline81-001
-		readline/readline81-002
-		readline/Fixed-missing-POSIX_SIGNALS-check.patch
-	)
-elif [[ ${PKG_VERSION} == 8.0 ]]; then
-	PKG_PATCHES=(
-		readline/readline80-001
-		readline/readline80-002
-		readline/readline80-003
-		readline/readline80-004
-	)
-elif [[ ${PKG_VERSION} == 7.0 ]]; then
-	PKG_PATCHES=(
-		readline/readline-7.0-mingw.patch
-		readline/readline70-001
-		readline/readline70-002
-		readline/readline70-003
-		readline/readline70-004
-		readline/readline70-005
-	)
-fi
+case "${PKG_VERSION}" in
+	8.2)
+		PKG_PATCHES=(
+			readline/readline82-001.patch
+			readline/readline82-002.patch
+			readline/readline82-003.patch
+			readline/readline82-004.patch
+			readline/readline82-005.patch
+			readline/readline82-006.patch
+			readline/readline82-007.patch
+			# patches imported from msys2
+			readline/0001-sigwinch.patch
+			readline/0002-event-hook.patch
+			readline/0003-fd_set.patch
+			readline/0004-locale.patch
+			#
+			readline/remove-export-all-flag.patch
+		)
+		;;
+	8.1)
+		PKG_PATCHES=(
+			readline/readline81-001
+			readline/readline81-002
+			readline/Fixed-missing-POSIX_SIGNALS-check.patch
+		)
+		;;
+	8.0)
+		PKG_PATCHES=(
+			readline/readline80-001
+			readline/readline80-002
+			readline/readline80-003
+			readline/readline80-004
+		)
+		;;
+	7.0)
+		PKG_PATCHES=(
+			readline/readline-7.0-mingw.patch
+			readline/readline70-001
+			readline/readline70-002
+			readline/readline70-003
+			readline/readline70-004
+			readline/readline70-005
+		)
+		;;
+	*)
+		PKG_PATCHES=()
+		;;
+esac
 
 #
 
