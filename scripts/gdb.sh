@@ -113,7 +113,7 @@ PKG_MAKE_FLAGS=(
 
 PKG_INSTALL_FLAGS=(
 	-j$JOBS
-	$( [[ $STRIP_ON_INSTALL == yes && $(echo $PKG_VERSION | cut -d. -f1) -gt 11 ]] && echo install-strip || echo install )
+	$( [[ $STRIP_ON_INSTALL == yes && $(echo $PKG_VERSION | cut -d. -f1) -ge 11 ]] && echo install-strip || echo install )
 )
 
 # **************************************************************************
