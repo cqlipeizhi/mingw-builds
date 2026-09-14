@@ -186,7 +186,7 @@ PKG_CONFIGURE_FLAGS=(
 	--with-threads
 	--with-system-expat
 	--with-system-ffi
-	--enable-optimizations
+	$( [[ $BUILD_VERSION == 8.5.0 && ${BUILD_ARCHITECTURE} == x86_64 ]] && echo --enable-optimizations )
 	#
 	LIBFFI_INCLUDEDIR="$LIBSW_DIR/include"
 	OPT=""
