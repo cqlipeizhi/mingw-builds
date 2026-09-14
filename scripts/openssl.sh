@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=1.1.1w
+PKG_VERSION=3.0.22
 PKG_NAME=openssl-${PKG_VERSION}
 PKG_DIR_NAME=openssl-${PKG_VERSION}
 PKG_TYPE=.tar.gz
@@ -56,9 +56,17 @@ PKG_CONFIGURE_SCRIPT=Configure
 #
 
 PKG_PATCHES=(
-	$( [[ ${PKG_VERSION} == 1.1.1w ]] \
-		&& { echo "openssl/openssl-1.1.1-relocation.patch"; } \
-		|| { echo "openssl/openssl-3.6.1-relocation.patch"; } 
+	$( case "${PKG_VERSION}" in
+		1.1.1w)
+			echo "openssl/openssl-1.1.1-relocation.patch"
+			;;
+		3.0.22)
+			echo "openssl/openssl-3.0.8-relocation.patch"
+			;;
+		3.6.1)
+			echo "openssl/openssl-3.6.1-relocation.patch"
+			;;
+		esac
 	)
 )
 

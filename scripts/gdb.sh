@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=$( [[ `echo $BUILD_VERSION | cut -d. -f1` == 4 || `echo $BUILD_VERSION | cut -d. -f1` == 5 ]] && { echo 7.12.1; } || { echo 12.1; } )
+PKG_VERSION=$( [[ `echo $BUILD_VERSION | cut -d. -f1` == 4 || `echo $BUILD_VERSION | cut -d. -f1` == 5 ]] && { echo 7.12.1; } || { echo 13.2; } )
 PKG_NAME=gdb-${PKG_VERSION}
 PKG_DIR_NAME=gdb-${PKG_VERSION}
 PKG_TYPE=.tar.xz
@@ -62,6 +62,9 @@ PKG_PATCHES=(
 		10.2|12.1)
 			# GDB 12.1 currently reuses the GDB 10.2 patch; dry-run verified it applies cleanly.
 			echo "gdb/gdb-10.2-fix-using-gnu-print.patch"
+			;;
+		13.2)
+			echo "gdb/gdb-13.2-fix-using-gnu-print.patch"
 			;;
 		esac
 	)
