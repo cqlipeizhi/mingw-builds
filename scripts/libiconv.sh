@@ -49,8 +49,17 @@ PKG_PRIORITY=prereq
 
 PKG_PATCHES=(
 	libiconv/0002-fix-cr-for-awk-in-configure.all.patch
-	libiconv/fix-pointer-buf.patch
-	libiconv/remove-invalid-prototype.patch
+	$( case $PKG_VERSION in
+		1.17)
+			echo libiconv/fix-pointer-buf.patch
+			echo libiconv/remove-invalid-prototype.patch
+			;;
+		1.19)
+			echo libiconv/libiconv-1.19-fix-pointer-buf.patch
+			echo libiconv/0003-add-cp65001-as-utf8-alias.patch
+			;;
+		esac
+	)
 )
 
 #
