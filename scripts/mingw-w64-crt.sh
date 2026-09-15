@@ -128,7 +128,7 @@ PKG_CONFIGURE_FLAGS=(
 #
 
 PKG_MAKE_FLAGS=(
-	# -j$JOBS
+	$( [[ $RUNTIME_MAJOR_VERSION == 10 && $EXCEPTIONS_MODEL == sjlj ]] && echo "-j1" || echo "-j$JOBS" )
 	all
 )
 

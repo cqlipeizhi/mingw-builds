@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=3.12.12
+PKG_VERSION=3.9.13
 PKG_NAME=Python-${PKG_VERSION}
 PKG_DIR_NAME=Python-${PKG_VERSION}
 PKG_TYPE=git
@@ -54,8 +54,13 @@ PKG_EXECUTE_AFTER_UNCOMPRESS=(
 #
 
 PKG_PATCHES=(
-	Python3/python-3.13-fix-incompatible-pointer-types.patch
-	Python3/python-3.12-fix-tk.patch
+	$( [[ $PKG_VERSION == 3.9.13 ]] && { 
+			echo "Python3/0100-get-libraries-tuple-append-list.patch"
+		} || {
+			echo "Python3/python-3.13-fix-incompatible-pointer-types.patch"
+			echo "Python3/python-3.12-fix-tk.patch"
+	} )
+	
 )
 
 #
