@@ -47,9 +47,12 @@ PKG_PRIORITY=extra
 
 #
 
-PKG_EXECUTE_AFTER_UNCOMPRESS=(
-	"git reset --hard 56cdb4b201d96f26cdcb1f7c2b93086298f7df11" # Reset to this commit hash for reproducible builds
-)
+PKG_EXECUTE_AFTER_UNCOMPRESS=()
+[[ $PKG_VERSION == 3.14.7 ]] && {
+	PKG_EXECUTE_AFTER_UNCOMPRESS=(
+		"git reset --hard 56cdb4b201d96f26cdcb1f7c2b93086298f7df11" # Reset to this commit hash for reproducible builds
+	)
+}
 
 #
 
