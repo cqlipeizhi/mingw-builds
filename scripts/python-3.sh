@@ -59,8 +59,8 @@ PKG_PATCHES=(
 		} || {
 			echo "Python3/python-3.13-fix-incompatible-pointer-types.patch"
 			echo "Python3/python-3.12-fix-tk.patch"
-	} )
-	
+		}
+	)
 )
 
 #
