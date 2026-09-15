@@ -128,7 +128,7 @@ PKG_CONFIGURE_FLAGS=(
 #
 
 PKG_MAKE_FLAGS=(
-	-j$JOBS
+	# -j$JOBS
 	all
 )
 
