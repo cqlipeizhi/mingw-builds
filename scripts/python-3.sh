@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=3.9.13
+PKG_VERSION=3.11.10
 PKG_NAME=Python-${PKG_VERSION}
 PKG_DIR_NAME=Python-${PKG_VERSION}
 PKG_TYPE=git
@@ -57,12 +57,19 @@ PKG_EXECUTE_AFTER_UNCOMPRESS=()
 #
 
 PKG_PATCHES=(
-	$( [[ $PKG_VERSION == 3.9.13 ]] && { 
-			echo "Python3/0100-get-libraries-tuple-append-list.patch"
-		} || {
-			echo "Python3/python-3.13-fix-incompatible-pointer-types.patch"
-			echo "Python3/python-3.12-fix-tk.patch"
-		}
+	$( case $PKG_VERSION in
+	 		3.9.13)
+				echo "Python3/0100-get-libraries-tuple-append-list.patch"
+				;;
+			3.11.10)
+				echo "Python3/python-3.11-remove-WASM_STDLIB-target.patch"
+				echo "Python3/0200-launcher-permissive-c-error-on-gcc14.patch"
+				;;
+			3.14.7)
+				echo "Python3/python-3.13-fix-incompatible-pointer-types.patch"
+				echo "Python3/python-3.12-fix-tk.patch"
+				;;
+		esac
 	)
 )
 
