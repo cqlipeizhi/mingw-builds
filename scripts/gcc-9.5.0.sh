@@ -63,7 +63,10 @@ PKG_PATCHES=(
 	gcc/0020-libgomp-Don-t-hard-code-MS-printf-attributes.patch
 	gcc/gcc-9.4.0-libiberty-pic-and-jit-shared.patch
 	$( [[ $RUNTIME_MAJOR_VERSION -ge 10 ]] \
-		&& echo "gcc/0001-gcc-config-i386-mingw32.h-Ensure-lmsvcrt-precede-lke.patch" \
+		&& {
+			echo "gcc/gcc-11-replace-abort-with-fancy_abort.patch"
+			echo "gcc/0001-gcc-config-i386-mingw32.h-Ensure-lmsvcrt-precede-lke.patch"
+		}
 	)
 )
 
