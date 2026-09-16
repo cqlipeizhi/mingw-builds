@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=$( [[ `echo $BUILD_VERSION | cut -d. -f1` == 4 || `echo $BUILD_VERSION | cut -d. -f1` == 5 ]] && { echo 7.12.1; } || { echo 15.2; } )
+PKG_VERSION=$( [[ `echo $BUILD_VERSION | cut -d. -f1` == 4 || `echo $BUILD_VERSION | cut -d. -f1` == 5 ]] && { echo 7.12.1; } || { echo 16.3; } )
 PKG_NAME=gdb-${PKG_VERSION}
 PKG_DIR_NAME=gdb-${PKG_VERSION}
 PKG_TYPE=.tar.xz
@@ -68,6 +68,9 @@ PKG_PATCHES=(
 			;;
 		15.2)
 			echo "gdb/gdb-15.2-fix-using-gnu-print.patch"
+			;;
+		16.3)
+			echo "gdb/gdb-16.2-fix-using-gnu-print.patch"
 			;;
 		esac
 	)

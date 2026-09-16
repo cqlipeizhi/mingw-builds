@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=2.43.1
+PKG_VERSION=2.45.1
 PKG_NAME=binutils-${PKG_VERSION}
 [[ $USE_MULTILIB == yes ]] && {
 	PKG_NAME=$BUILD_ARCHITECTURE-$PKG_NAME-multi
@@ -53,7 +53,6 @@ PKG_PRIORITY=prereq
 #
 
 PKG_PATCHES=(
-	binutils/0001-enable-gold-on.mingw32.patch
 	binutils/0002-check-for-unusual-file-harder.patch
 	binutils/0008-fix-libiberty-makefile.mingw.patch
 	binutils/0009-fix-libiberty-configure.mingw.patch

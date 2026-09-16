@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=8.1
+PKG_VERSION=8.2
 PKG_NAME=readline-${PKG_VERSION}
 PKG_DIR_NAME=readline-${PKG_VERSION}
 PKG_TYPE=.tar.gz

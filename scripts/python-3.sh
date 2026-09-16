@@ -35,7 +35,7 @@
 
 # **************************************************************************
 
-PKG_VERSION=3.11.10
+PKG_VERSION=3.12.12
 PKG_NAME=Python-${PKG_VERSION}
 PKG_DIR_NAME=Python-${PKG_VERSION}
 PKG_TYPE=git
@@ -64,6 +64,12 @@ PKG_PATCHES=(
 			3.11.10)
 				echo "Python3/python-3.11-remove-WASM_STDLIB-target.patch"
 				echo "Python3/0200-launcher-permissive-c-error-on-gcc14.patch"
+				;;
+			3.12.12)
+				echo "Python3/python-3.11-remove-WASM_STDLIB-target.patch"
+				echo "Python3/python-3.11-_cursesmodule-fix-array-type.patch"
+				echo "Python3/python-3.11-fix-incompatible-pointer-types.patch"
+				echo "Python3/python-3.12-fix-tk.patch"
 				;;
 			3.14.7)
 				echo "Python3/python-3.13-fix-incompatible-pointer-types.patch"
