@@ -101,6 +101,9 @@ PKG_EXECUTE_AFTER_PATCH=(
 
 MY_CPPFLAGS="-Wno-error=implicit-function-declaration -I$LIBSW_DIR/include -I$LIBSW_DIR/include/ncursesw -I$PREREQW_DIR/$BUILD_ARCHITECTURE-zlib-$LINK_TYPE_SUFFIX/include"
 
+GCC11_PROFILE_UPDATE=""
+[[ $(echo "$BUILD_VERSION" | cut -d. -f1) == 11 && $PKG_VERSION == 3.12.12 ]] && GCC11_PROFILE_UPDATE="-fprofile-update=atomic"
+
 # Workaround for conftest error on 64-bit builds
 export ac_cv_working_tzset=no
 
@@ -122,7 +125,7 @@ PKG_CONFIGURE_FLAGS=(
 	# --with-tzpath=$LIBS_DIR/share/zoneinfo
 	--enable-optimizations
 	#
-	CFLAGS="$COMMON_CFLAGS $MY_CPPFLAGS -D__USE_MINGW_ANSI_STDIO=1 -DNCURSES_STATIC"
+	CFLAGS="$COMMON_CFLAGS $MY_CPPFLAGS -D__USE_MINGW_ANSI_STDIO=1 -DNCURSES_STATIC $GCC11_PROFILE_UPDATE"
 	CPPFLAGS="$COMMON_CPPFLAGS $MY_CPPFLAGS -D__USE_MINGW_ANSI_STDIO=1 -DNCURSES_STATIC"
 	LDFLAGS="$COMMON_LDFLAGS -L$PREREQW_DIR/$BUILD_ARCHITECTURE-zlib-$LINK_TYPE_SUFFIX/lib -L$LIBSW_DIR/lib"
 	OPENSSL_LIBS="\"-lcrypto -lssl\""
